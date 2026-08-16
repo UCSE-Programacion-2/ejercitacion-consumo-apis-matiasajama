@@ -1,11 +1,11 @@
 {
   "extends": ["stylelint-config-standard"],
   "rules": {
-    "color-hex-case": "lower",
     "color-hex-length": "short",
     "declaration-block-no-duplicate-properties": true,
     "declaration-block-no-redundant-longhand-properties": true,
-    "declaration-no-important": "warn",
+    "declaration-no-important": [true, { "severity": "warning" }],
+    "selector-class-pattern": null,
     "property-no-unknown": true,
     "selector-type-no-unknown": true,
     "no-duplicate-selectors": true,
