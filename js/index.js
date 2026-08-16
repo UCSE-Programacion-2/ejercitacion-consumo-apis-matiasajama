@@ -22,6 +22,10 @@ function renderizarDatosUsuario(datos) {
   // Escribe aquí tu código para mostrar la foto, nombre completo e email en div.tarjeta
 }
 
+fetch('http://localhost:3000/api/user')
+  .then((response) => response.json())
+  .then((datos) => renderizarDatosUsuario(datos));
+
 /* -------------------------------- CONSIGNA 2 -------------------------------- */
 // 1. Descomentar en index.html el contenedor .btnContainer con el botón #random.
 // 2. Desarrollar la función cargarUsuario() o escuchar el evento clic en el botón #random.
