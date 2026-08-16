@@ -29,10 +29,6 @@ function renderizarDatosUsuario(datos) {
   `;
 }
 
-fetch('http://localhost:3000/api/user')
-  .then((response) => response.json())
-  .then((datos) => renderizarDatosUsuario(datos));
-
 /* -------------------------------- CONSIGNA 2 -------------------------------- */
 // 1. Descomentar en index.html el contenedor .btnContainer con el botón #random.
 // 2. Desarrollar la función cargarUsuario() o escuchar el evento clic en el botón #random.
@@ -40,5 +36,12 @@ fetch('http://localhost:3000/api/user')
 //    y actualizar la tarjeta sin recargar la página.
 
 function cargarUsuario() {
-  // Escribe aquí tu código para realizar un nuevo pedido a la API y actualizar la tarjeta
+  fetch('http://localhost:3000/api/user')
+    .then((response) => response.json())
+    .then((datos) => renderizarDatosUsuario(datos));
 }
+
+const botonRandom = document.querySelector('#random');
+
+botonRandom.addEventListener('click', cargarUsuario);
+cargarUsuario();
