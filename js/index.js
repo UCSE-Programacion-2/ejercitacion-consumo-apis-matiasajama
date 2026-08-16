@@ -19,7 +19,14 @@
 //    (.tarjeta img, .tarjeta h2, .tarjeta p).
 
 function renderizarDatosUsuario(datos) {
-  // Escribe aquí tu código para mostrar la foto, nombre completo e email en div.tarjeta
+  const usuario = datos.results[0];
+  const tarjeta = document.querySelector('.tarjeta');
+
+  tarjeta.innerHTML = `
+    <img src="${usuario.picture.large}" alt="Foto de ${usuario.name.first} ${usuario.name.last}" />
+    <h2>${usuario.name.title} ${usuario.name.first} ${usuario.name.last}</h2>
+    <p>${usuario.email}</p>
+  `;
 }
 
 fetch('http://localhost:3000/api/user')
